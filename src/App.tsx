@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { SessionProvider } from "./contexts";
+import { Dashboard, Signin } from "./pages";
 
-function App() {
+import { globalStyles } from "./styles";
+
+const App = () => {
+  globalStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ToastContainer autoClose={4000} position="bottom-right" />
+      <SessionProvider>
+        <Routes>
+          <Route path="/" element={<Signin />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </SessionProvider>
+    </>
   );
-}
+};
 
-export default App;
+export { App };
