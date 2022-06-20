@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Col, Row, Dropdown, Avatar } from "@nextui-org/react";
+import { Col, Row, Dropdown, Avatar, User } from "@nextui-org/react";
 import { AiOutlineLogout } from "@react-icons/all-files/ai/AiOutlineLogout";
 
 import * as S from "./styles";
@@ -25,6 +25,11 @@ const Header = () => {
     <S.Container>
       <Col>
         <Row justify="flex-start">
+          <img src="logoDoc.png" alt="logo" width={40} height={40} />
+        </Row>
+      </Col>
+      <Col>
+        <Row justify="flex-end" align="center">
           <Dropdown placement="bottom-left">
             <Dropdown.Trigger>
               <Avatar
@@ -32,7 +37,6 @@ const Header = () => {
                 src={`${user?.photoURL}`}
                 color="success"
                 bordered
-                squared
               />
             </Dropdown.Trigger>
             <Dropdown.Menu
@@ -46,11 +50,6 @@ const Header = () => {
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-        </Row>
-      </Col>
-      <Col>
-        <Row justify="flex-end" align="center">
-          <img src="logoDoc.png" alt="logo" width={40} height={40} />
         </Row>
       </Col>
     </S.Container>
