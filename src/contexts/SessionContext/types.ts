@@ -6,4 +6,6 @@ export enum UserPermission {
 
 export interface ISessionContext {
   user: User | null;
+  refreshSession: () => void;
+  loading: boolean;
 }

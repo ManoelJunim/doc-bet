@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Col, Row, Dropdown, Avatar, User } from "@nextui-org/react";
+import { Col, Row, Dropdown, Avatar } from "@nextui-org/react";
 import { AiOutlineLogout } from "@react-icons/all-files/ai/AiOutlineLogout";
 
 import * as S from "./styles";
@@ -35,6 +35,7 @@ const Header = () => {
               <Avatar
                 size="md"
                 src={`${user?.photoURL}`}
+                alt={`${user?.displayName}`}
                 color="success"
                 bordered
               />
