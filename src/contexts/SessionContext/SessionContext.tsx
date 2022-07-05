@@ -15,8 +15,6 @@ const SessionProvider = ({ children }: { children?: React.ReactNode }) => {
     setLoading(true);
     auth.onAuthStateChanged((userData) => {
       if (userData) {
-        console.log("setei o user");
-        console.log(userData);
         setUser(userData);
         setLoading(false);
       } else {
