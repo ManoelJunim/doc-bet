@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Row, Text, Image, Spacer } from "@nextui-org/react";
 import { GrGoogle } from "@react-icons/all-files/gr/GrGoogle";
-import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import { signInWithPopup } from "firebase/auth";
 import { auth, authGoogle } from "../../services";
